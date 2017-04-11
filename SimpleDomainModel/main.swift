@@ -155,7 +155,7 @@ open class Family {
     
     open func haveChild(_ child: Person) -> Bool {
         // This method completely ignore the child. Is this the expected behaviour?
-        for member in members {
+        for member in self.members {
             if (member.age >= 21) {
                 self.members.append(Person(firstName: "", lastName: "", age: 0))
                 return true
