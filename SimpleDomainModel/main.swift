@@ -154,10 +154,9 @@ open class Family {
     }
     
     open func haveChild(_ child: Person) -> Bool {
-        // This method completely ignore the child. Is this the expected behaviour?
         for member in self.members {
             if (member.age >= 21) {
-                self.members.append(Person(firstName: "", lastName: "", age: 0))
+                self.members.append(child)
                 return true
             }
         }
@@ -168,9 +167,8 @@ open class Family {
         var totalIncome: Int = 0
         for member in self.members {
             if (member.job != nil) {
-                // Assumed random hours, Dont know what to set as hours
-                // Where do we fetch hours from?
-                totalIncome = totalIncome + member.job!.calculateIncome(1)
+                // Assumes that a person works for 2000 hours.
+                totalIncome = totalIncome + member.job!.calculateIncome(2000)
             }
         }
         return totalIncome
